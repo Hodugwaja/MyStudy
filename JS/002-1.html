@@ -206,8 +206,81 @@
 <br><br>
 
 <div class = "square">
-    
+    <h2>지금 시간은 몇시일까요?</h2>
+    <button onclick="document.getElementById('time').innerHTML=Date()">시간 확인하기</button>
+    <p id = "time"></p>
+
+    <button onclick = "displayDate()">시간 확인하기(함수를 이용함)</button>
+    <script>
+        function displayDate(){
+            document.getElementById("FunctionTime").innerHTML = Date();
+        }
+    </script>
+    <p id = "FunctionTime"></p>
+    <br>
 </div>
+<br><br>
+<div class ="square">
+    <h2>이번에는 한번 중간에 있는 글자를 바꾸겠습니다</h2>
+    <p id = "change">넥센 김혜성아 느그아부지 김XX에게 김선생 돈갚으라 전해라.</p>
+    <button onclick="changer()">바꾸기</button>
+    <script>
+        function changer(){
+            var str = document.getElementById("change").innerHTML;
+            var txt = str.replace("넥센", "키움");
+            document.getElementById("change").innerHTML = txt;
+        }    
+    </script>
+    <br><br>
+</div>
+<br><br>
+
+<div class = "square">
+    <h2>이번에는 중간에 있는 글자를 바꾸겠습니다 </h2>
+    <h3>단, 이번에는 한번 누를때마다 한 단어씩 바뀔에정입니다</h3>
+    <p id = "shake">흔들어주세요 shake shake shake shake shake</p>
+    <button onclick="shaker()">shake를 바꾸기</button>
+    <script>
+        function shaker(){
+            var str = document.getElementById("shake").innerHTML;
+            var txt = str.replace("shake", "오");
+            document.getElementById("shake").innerHTML = txt;
+        }  
+    </script>
+    <br><br>
+</div>
+<br><br>
+
+<div class = "square">
+    <h2>이번에는 영어 대문자를 소문자로 만들어보겠습니다</h2>
+    <p id = "LowerCase">North Carolina Dinos</p>
+    <button onclick="LowerCase()">이 영어 단어를 소문자로 바꾸기</button>
+    <script>
+        function LowerCase(){
+            var text = document.getElementById("LowerCase").innerHTML;
+            document.getElementById("LowerCase").innerHTML = text.toLowerCase();
+        }
+    </script>
+    <br><br>
+</div>
+<br><br>
+
+<div class = "square">
+    <h2>이번에는 단어 일부를 한번 잘라보겠습니다</h2>
+    <p id = "kiwoom", id = "heros">키움 히어로즈 이정후</p>
+    <button onclick="slicer()">위의 글을 잘라서 alert 시키겠습니다</button>
+    <script>
+        function slicer(){
+            var txt = "키움 히어로즈 이정후";
+            var pos = txt.indexOf("키움");
+            var x = txt.slice(3, 7);
+            alert(pos);
+            alert(x);
+        }
+    </script>
+    <br><br>
+</div>
+
 
 </body>
 </html>
