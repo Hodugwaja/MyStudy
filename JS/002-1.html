@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
+<html><head>
     <style>
         .square{
             border : 5px solid gray;
@@ -15,11 +13,12 @@
 </head>
 <body>
 
+<!---JS 공부--->
 <h1>자바스크립트를 공부를 해보자</h1>
 
 <hr><br>
 <p>코드가 궁금하면 f12를 통해 확인이 가능하다</p>
-<div class = "square">
+<div class="square">
 <h2>먼저 JavaScript를 이용해서 한번 이정후의 성별을 바꿔보자</h2>
 <hr>
 
@@ -35,15 +34,15 @@
 
 <br>
 
-<div class = "square">
+<div class="square">
 <h2>자바 스크립트를 이용해서 한번 CSS 파일을 변경해보자</h2>
 
 <hr>
 
-<p id = "bigger"> 이번에는 한번 글자 크기를 바꾸어보자 </p>
+<p id="bigger"> 이번에는 한번 글자 크기를 바꾸어보자 </p>
 
-<button type = "button" onclick = "document.getElementById('bigger').style.fontSize = '35px'">크기 키우기</button>
-<button type = "button" onclick = "document.getElementById('bigger').style.fontSize = '16px'">크기 줄이기</button>
+<button type="button" onclick="document.getElementById('bigger').style.fontSize = '35px'">크기 키우기</button>
+<button type="button" onclick="document.getElementById('bigger').style.fontSize = '16px'">크기 줄이기</button>
 
 <br><br>
 
@@ -51,25 +50,25 @@
 
 <br>
 
-<div class = "square">
+<div class="square">
 <h2>이번에는 한번 글자를 나타나게 하다가 없애보자</h2>
 <hr>
 
-<p id = "disapear">DTD <br> -김재박-</p>
+<p id="disapear">DTD <br> -김재박-</p>
 
-<button type = "button" onclick= "document.getElementById('disapear').style.display = 'none'">없애기</button>
-<button type = "button" onclick= "document.getElementById('disapear').style.display = 'block'">나타나게 하기</button>
+<button type="button" onclick="document.getElementById('disapear').style.display = 'none'">없애기</button>
+<button type="button" onclick="document.getElementById('disapear').style.display = 'block'">나타나게 하기</button>
 
 <br><br>
 </div>
 
 <br>
 
-<div class = "square">
+<div class="square">
     
     <h2>JS로 글자를 한번 써보자</h2>
     <hr>
-    <p id = "JavaScript"></p>
+    <p id="JavaScript">놀랍게도 이건 JS로만 쓴 것입니다</p>
     <script>
         document.getElementById("JavaScript").innerHTML = "놀랍게도 이건 JS로만 쓴 것입니다";    
     </script>
@@ -78,13 +77,13 @@
 
 <br><br>
 
-<div class = "square">
+<div class="square">
     <h2>이번에는 한번 글자를 바꿔보겠습니다</h2>
-    <p id = "HeadChange">얘는 <b>head쪽</b></p>
-    <button type = "button" onclick="myFunctionHead()">버튼을 눌러서 바꾸어보기</button>
+    <p id="HeadChange">얘는 <b>head쪽</b></p>
+    <button type="button" onclick="myFunctionHead()">버튼을 눌러서 바꾸어보기</button>
     <br>
-    <p id = "BodyChange">얘는 <b>body</b>쪽</p>
-    <button type = "button" onclick="myFunctionBody()">버튼을 눌러서 바꾸어보기</button>
+    <p id="BodyChange">얘는 <b>body</b>쪽</p>
+    <button type="button" onclick="myFunctionBody()">버튼을 눌러서 바꾸어보기</button>
     <script>
         function myFunctionBody(){
             document.getElementById("BodyChange").innerHTML = "짜잔";
@@ -96,20 +95,20 @@
 
 <br><br>
 
-<div class = "square">
+<div class="square">
     <h2>이번에는 한번 JS파일로 글자를 바꾸어보겠습니다</h2>
-    <p id = "JS">자 이제 이 글자는 javascript 파일을 통해서 바뀝니다</p>
-    <button type = "button" onclick="myFunction()">바꾸기</button>
+    <p id="JS">자 이제 이 글자는 javascript 파일을 통해서 바뀝니다</p>
+    <button type="button" onclick="myFunction()">바꾸기</button>
    
-    <script src = "002-1.js"></script>
+    <script src="002-1.js"></script>
     <br><br>
 </div>
 
 <br><br>
 
-<div class = "square">
+<div class="square">
     <h2>이번에는 javascript를 이용해서 연산을 해보겠습니다</h2>
-    <p id = "plus">는 귀요미가 아니고 2</p>
+    <p id="plus">2</p>
     <script>
         document.getElementById("plus").innerHTML = 1 + 1;
     </script>
@@ -118,21 +117,21 @@
 
 <br><br>
 
-<div class = "square">
+<div class="square">
     <h2>이번에는 따로 p태그 내에 id 없이 그저 javascript로만 만들어보겠습니다</h2>
-    <script>document.write(1+1);</script>
+    <script>document.write(1+1);</script>2
     <br><br>
 </div>
 <br><br>
 
-<div class = "square">
+<div class="square">
     <h2>이번에는 순수 html로 한번 만들어보겠습니다</h2>
-    <button type = "button" onclick="document.write(5+5)">누르시오 날라가는것 주의하세요</button>
+    <button type="button" onclick="document.write(5+5)">누르시오 날라가는것 주의하세요</button>
     <br><br>
 </div>
 <br><br>
 
-<div class = "square">
+<div class="square">
     <h2>이번에는 누르면 새로고침 중에 나오게 됩니다</h2>
     <script>
         /*
@@ -142,33 +141,33 @@
         */
     </script>
     <p>편의상 주석처리함 ㅇㅅㅇ</p>
-    <button type = "button" onclick="alertFunction()">누르면 나오게 됨</button>
-    <script src = "alert.js"></script>
+    <button type="button" onclick="alertFunction()">누르면 나오게 됨</button>
+    <script src="alert.js"></script>
     <br>
     <br>
 </div>
 <br><br>
 
-<div class = "square">
+<div class="square">
     <h2>지금 나온 것은 f12를 눌러서 console쪽에 나오게 된다</h2>
     <script>console.log("규카츠 먹고 싶다");</script>
 </div>
 <br><br>
 
-<div class = " square">
+<div class=" square">
     <h2>이 버튼을 통해서 페이지를 출력할 수 있다</h2>
     <button onclick="window.print()">이 페이지를 출력한다</button>
     <br><br>
 </div>
 <br><br>
 
-<div class ="square">
+<div class="square">
 
     <h2>이 버튼을 누른다면 다음 문이 입력이 됩니다</h2>
-    <button type = "button" onclick = "myFunctionPrint()">이 버튼을 누르면 새로운 문자가 생겨납니다</button>
+    <button type="button" onclick="myFunctionPrint()">이 버튼을 누르면 새로운 문자가 생겨납니다</button>
 
-    <p id = "demo1"></p>
-    <p id = "demo2"></p>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
 
     <script>
         function myFunctionPrint(){
@@ -180,9 +179,9 @@
 </div>
 <br><br>
 
-<div class = "square">
-    <h2 id = "Title"></h2>
-    <p id = "contents"></p>
+<div class="square">
+    <h2 id="Title">이 글자는 javascript를 이용해서 만들어졌습니다</h2>
+    <p id="contents">이것도 포함</p>
 
     <script>
         document.getElementById('Title').innerHTML = "이 글자는 javascript를 이용해서 만들어졌습니다";
@@ -191,9 +190,9 @@
 </div>
 <br><br>
 
-<div class ="square">
+<div class="square">
     <h2>이 것은 하나의 document.getElementyByld를 사용했다</h2>
-    <p id = "two"></p>
+    <p id="two">3.14<br>LeeJungHu<br>HoduGwaja</p>
     <script>
         var pi = 3.14;
         var person = "LeeJungHu";
@@ -205,24 +204,24 @@
 </div>
 <br><br>
 
-<div class = "square">
+<div class="square">
     <h2>지금 시간은 몇시일까요?</h2>
     <button onclick="document.getElementById('time').innerHTML=Date()">시간 확인하기</button>
-    <p id = "time"></p>
+    <p id="time"></p>
 
-    <button onclick = "displayDate()">시간 확인하기(함수를 이용함)</button>
+    <button onclick="displayDate()">시간 확인하기(함수를 이용함)</button>
     <script>
         function displayDate(){
             document.getElementById("FunctionTime").innerHTML = Date();
         }
     </script>
-    <p id = "FunctionTime"></p>
+    <p id="FunctionTime"></p>
     <br>
 </div>
 <br><br>
-<div class ="square">
+<div class="square">
     <h2>이번에는 한번 중간에 있는 글자를 바꾸겠습니다</h2>
-    <p id = "change">넥센 김혜성아 느그아부지 김XX에게 김선생 돈갚으라 전해라.</p>
+    <p id="change">넥센 김혜성아 느그아부지 김XX에게 김선생 돈갚으라 전해라.</p>
     <button onclick="changer()">바꾸기</button>
     <script>
         function changer(){
@@ -235,10 +234,10 @@
 </div>
 <br><br>
 
-<div class = "square">
+<div class="square">
     <h2>이번에는 중간에 있는 글자를 바꾸겠습니다 </h2>
     <h3>단, 이번에는 한번 누를때마다 한 단어씩 바뀔에정입니다</h3>
-    <p id = "shake">흔들어주세요 shake shake shake shake shake</p>
+    <p id="shake">흔들어주세요 shake shake shake shake shake</p>
     <button onclick="shaker()">shake를 바꾸기</button>
     <script>
         function shaker(){
@@ -251,9 +250,9 @@
 </div>
 <br><br>
 
-<div class = "square">
+<div class="square">
     <h2>이번에는 영어 대문자를 소문자로 만들어보겠습니다</h2>
-    <p id = "LowerCase">North Carolina Dinos</p>
+    <p id="LowerCase">North Carolina Dinos</p>
     <button onclick="LowerCase()">이 영어 단어를 소문자로 바꾸기</button>
     <script>
         function LowerCase(){
@@ -265,22 +264,104 @@
 </div>
 <br><br>
 
-<div class = "square">
+<div class="square">
     <h2>이번에는 단어 일부를 한번 잘라보겠습니다</h2>
-    <p id = "kiwoom", id = "heros">키움 히어로즈 이정후</p>
+    <p id="kiwoom" ,="">키움 히어로즈 이정후</p>
     <button onclick="slicer()">위의 글을 잘라서 alert 시키겠습니다</button>
     <script>
         function slicer(){
             var txt = "키움 히어로즈 이정후";
             var pos = txt.indexOf("키움");
             var x = txt.slice(3, 7);
-            alert(pos + " 뭐야 얘 왜이래?");
+            alert(pos + "뭐야 얘 왜이래?");
             alert(x);
         }
     </script>
     <br><br>
 </div>
 
+<br><br>
 
-</body>
-</html>
+<div class = "square">
+    <h2>자바스크립트 배열을 새로 넣어보자</h2>
+    <p>무한으로 추가되는것은 함정</p>
+    <h5><p id = "buyTomarrow"></p></h5>
+    <button onclick="AddList()">내일 살거 추가하기</button>
+
+    <script>    
+        var list = ["통 케챂", "양상치 반통", "파 두쪽", "전공책", "기업은행 보안카드", "백설탕 한포대", "비피더스 한 묶음", "옛날통닭 두마리 현금계산으로..."];
+        document.getElementById("buyTomarrow").innerHTML = list;
+
+        function AddList(){
+            list[list.length] = "아기 코끼리";
+            document.getElementById("buyTomarrow").innerHTML = list;
+        }
+    </script>
+    <br><br>
+</div>
+
+<br><br>
+<div class = "square">
+    <h2>이번에는 한번 배열을 뒤에서 없애보자 </h2>
+    <h4>pop함수로 할 수 있다</h4>
+    <p id = "POP">오류</p>
+    <button onclick="Poper()">버튼을 누르면 하나씩 사라집니다</button>
+
+    <script>
+        var player = ["서건창", "김하성", "이정후", "박병호", "박동원", "김혜성", "이지영", "김규민", "박준태"];
+        document.getElementById("POP").innerHTML = player;
+        function Poper(){
+            player.pop();
+            document.getElementById("POP").innerHTML = player;
+        }
+    </script>
+    <br><br>
+</div>
+
+<br><br>
+
+<div class = "square">
+    <h2>이번에는 한번 배열을 쪼개보자 </h2>
+    <h4>slicer함수로 할 수 있다</h4>
+    <p id = "cutter">오류</p>
+    <button onclick="Slicer()">버튼을 누르면 이정후까지 출력이 됩니다</button>
+
+    <script>
+        var Player = ["서건창", "김하성", "이정후", "박병호", "박동원", "김혜성", "이지영", "김규민", "박준태"];
+        var Cut = Player.slice(0, 3);
+        document.getElementById("cutter").innerHTML = Player;
+        function Slicer(){
+            document.getElementById("cutter").innerHTML = Cut;
+        }
+       
+    </script>
+    <br><br>
+</div>
+
+<br><br>
+
+<div class = "square">
+    <h2>이번에는 배열을 합체해보자</h2>
+    <h4>concat()함수로 할 수 있다</h4>
+    <p id = "connect"></p>
+    <button onclick="HapChae()">합체시키기</button>
+    <script>
+        var Hitter = ["서건창", "김하성", "이정후", "박병호", "박동원", "김혜성", "이지영", "김규민", "박준태"];
+        var Pitcher = ["요키시", "브리검", "최원태", "이승호", "한현희", "김태훈", "안우진", "조상우"];
+        document.getElementById("connect").innerHTML = "타자 : " + Hitter + "<br>" + "투수 : " + Pitcher;
+        function HapChae(){
+            var Connecting = Hitter.concat(Pitcher);
+
+            document.getElementById("connect").innerHTML = "<h5>" + Connecting + "</h5>";
+        }
+    </script>  
+    <br><br>  
+</div>
+
+<br><br>
+
+<div class = "square">
+
+</div>
+<br><br>
+</body></html>
