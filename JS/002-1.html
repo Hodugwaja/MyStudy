@@ -4,6 +4,20 @@
             border : 5px solid gray;
             text-align: center;
         }
+        #container {
+            text-align: center;
+            width: 400px;
+            height: 400px;
+            position: relative;
+            background: yellow;
+        }
+        #animate {
+            text-align: center;
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            background-color: red;
+        }
     </style>
     <script>
         function myFunctionHead(){
@@ -11,7 +25,7 @@
         }
     </script>
 </head>
-<body>
+<body onload="checkCookies()">
 
 <!---JS 공부--->
 <h1>자바스크립트를 공부를 해보자</h1>
@@ -361,7 +375,296 @@
 <br><br>
 
 <div class = "square">
+    <h2>이번에는 정렬을 하고 원래대로 돌려보겠습니다</h2>
+    <h4>되돌리기는 reverse함수를 이용하면 됨</h4>
+    <p id = "SortAndReverse">오류</p>
+    <button onclick="Sorting()">오름차순으로 정렬</button>
+    <button onclick="Reversing()">원래대로 바꾸기</button>
+    <script>
+        var Pitches = ["요키시", "브리검", "최원태", "이승호", "한현희", "김태훈", "안우진", "조상우"];
+        document.getElementById("SortAndReverse").innerHTML = Pitches;
+        function Sorting(){
+            Sorted = Pitches.sort();
+            document.getElementById("SortAndReverse").innerHTML = Sorted;
+        }
+        function Reversing(){
+            Reversed = Pitches.reverse();
+            document.getElementById("SortAndReverse").innerHTML = Reversed;
+        }
+    </script>
+    <br><br>
+</div>
 
+<br><br>
+
+<div class = "square">
+    <h2>이번에는 한번 랜덤으로 정렬을 해보겠습니다</h2>
+    <h4>Math.random함수로 가능함</h4>
+
+    <p id = "Random">오류</p>
+    <button onclick="random()">랜덤정렬</button>
+
+    <script>
+        var points = [2051, 1900, 1699, 4616, 1645, 1578, 1515, 1492, 1397, 1386];
+        //2020.07.07기준 컴프야 포인트 1등에 10등(구창모, 로하스, 이정후, 루친스키, 요키시, 나성범, 알테어, 페르난데스, 김현수, 김하성)
+        
+        document.getElementById("Random").innerHTML = points;
+
+        function random(){
+            points.sort(function(a, b){return 0.5 - Math.random()});
+            document.getElementById("Random").innerHTML = points;
+        }
+    </script>
+    <br><br>
+</div>
+
+<br><br>
+
+<div class = "square">
+    <h2>이번에는 여럿 배열을 한번에 정렬을 해보자</h2>
+    <h4>객체 선언 후 하면 가능하다(웬만하면 코드를 보자)</h4>
+    <p id = "showBaseBall">오류</p>
+    <button onclick="SortTogether()">정렬</button>
+    <script>
+        var players = [
+            {name : "요키시", year : 2019},
+            {name : "브리검", year : 2017},
+            {name : "최원태", year : 2015},
+            {name : "이승호", year : 2017},
+            {name : "한현희", year : 2012},
+            {name : "안우진", year : 2018},
+            {name : "김태훈", year : 2012},
+            {name : "조상우", year : 2013},
+            {name : "서건창", year : 2012},
+            {name : "김하성", year : 2014},
+            {name : "이정후", year : 2017},
+            {name : "박병호", year : 2005},
+            {name : "러셀", year : 2020},
+            {name : "박동원", year : 2009},
+            {name : "김혜성", year : 2017}
+        ];
+        show();
+
+        function SortTogether(){
+            players.sort(function(a, b){return a.year - b.year});
+            show();
+        }
+        function show(){
+            document.getElementById("showBaseBall").innerHTML = 
+            players[0].name + " " + players[0].year + "<br>" +
+            players[1].name + " " + players[1].year + "<br>" +
+            players[2].name + " " + players[2].year + "<br>" +
+            players[3].name + " " + players[3].year + "<br>" +
+            players[4].name + " " + players[4].year + "<br>" +
+            players[5].name + " " + players[5].year + "<br>" +
+            players[6].name + " " + players[6].year + "<br>" +
+            players[7].name + " " + players[7].year + "<br>" +
+            players[8].name + " " + players[8].year + "<br>" +
+            players[9].name + " " + players[9].year + "<br>" +
+            players[10].name + " " + players[10].year + "<br>" +
+            players[11].name + " " + players[11].year + "<br>" +
+            players[12].name + " " + players[12].year + "<br>" +
+            players[13].name + " " + players[13].year + "<br>" +
+            players[14].name + " " + players[14].year + "<br>";           
+        }
+    </script>
+    <br><br>
+</div>
+
+<br><br>
+
+<!--블랙 리스트
+<div class = "square">
+    <h2>위의 코드를 한번 간략하게 만들어보자</h2>
+    <h4>객체 선언 후 하면 가능하다(웬만하면 코드를 쳐보자)</h4>
+    <p id = "showBaseBall2">오류</p>
+    <button onclick="SortTogether()">정렬</button>
+    <script>
+        var list = " ";
+        var players = ["요키시", "브리검", "최원태", "이승호", "한현희", "안우진", "김태훈", "조상우", "서건창", "김하성", "이정후", "박병호", "러셀", "박동원", "김혜성"];
+        show();
+
+        function SortTogether(){
+            players.sort(function(a, b){return a - b});
+            show();
+        }
+        function show(){
+            players.forEach(lister);
+            document.getElementById("showBaseBall2").innerHTML = list;    
+        }
+        function lister(value, index, array){
+            list = list + value + "<br>";
+        }
+    </script>
+    <br><br>
+</div>
+
+<br><br>
+-->
+<div class = "square">
+    <h2>이번에는 javascirpt 함수 중 날짜를 가지고 한번 만들어보겠습니다</h2>
+    <hr>
+
+    <h4>전체 시간</h4>
+    <h5>Date객체를 통해 만들 수 있다</h5>
+    <p id = "date">오류</p>
+    <hr>
+    
+    <h4>날짜 지정해주기</h4>
+    <h5>Date 객체 선언후 들어가는 숫자 순서는 연, 월, 일, 시, 분, 초 순서이다</h5>
+    <p id = "SetDate">오류</p>
+    <hr>
+    
+    <h4>세기 표현하기</h4>
+    <h5>연 부분을 십의 자리 숫자 또는 1의 자리 숫자로 넣으면 1900+'넣은 숫자'로 됨</h5>
+    <p id = "SetCentury">오류</p>
+    <hr>
+
+    <h4>날짜 표현하기(String 형태)</h4>
+    <h5>Date 객체 내부에서 d4에 선언된 것과 같이 넣는다</h5>
+    <p id = "SetString">오류</p>
+    <hr>
+
+    <h4>날짜 표현하기(MS 형태)</h4>
+    <h5>Date 객체 내부에 숫자 하나를 넘으면 1970년 1월 1일 기준으로 밀리초가 더해진다</h5>
+    <p id = "SetMS">오류</p>
+    <hr>
+
+    <h3>부가적인 설정은 Date 객체에 대입된 것에 .을 누르면 알 수 있다</h3>
+    <script>
+        var d1 = new Date();
+        document.getElementById("date").innerHTML = d1;
+
+        var d2 = new Date(1972, 10/*얘는 0부터 시작*/, 21, 10, 33, 30, 0);
+        document.getElementById("SetDate").innerHTML = d2;
+
+        var d3 = new Date(99, 11, 24);
+        document.getElementById("SetCentury").innerHTML = d3;
+
+        var d4 = new Date("March 24, 2008 11:21:00");
+        document.getElementById("SetString").innerHTML = d4;   
+
+        var d5 = new Date(5000019721121);
+        document.getElementById("SetMS").innerHTML = d5;
+    </script>
+    <br><br>
+</div>
+
+<br><br>
+
+<div class = "square">
+    <h2>이번에는 Math함수에 대해서 얘기를 해보겠다</h2>
+    <p>귀차니즘이 있기 때문에 console.log로 출력 예정</p>
+    <p>f12 -> console 창 확인(규카츠 먹고 싶다는 포함 X)</p>
+    <p><strong><a href = " https://www.w3schools.com/js/js_math.asp">추가로 더 알고 싶다는 아래 링크로 할 수 있다</a></strong></p>
+
+
+
+    <script>
+        console.log(Math.PI); // 파이값이 나온다
+        
+        console.log(
+            Math.round(4.7),
+            Math.round(4.4)
+        );// 다음과 같이 math.round는 소수가 입력 되었을 때 반올림으로 출력한다
+
+        console.log(Math.pow(8, 2)); // pow함수는 앞의 숫자를 뒤에 숫자만큼 곱한다
+        console.log(Math.sqrt(64)); // sqrt함수는 넣은 값을 제곱근을 구한다
+
+        console.log(Math.abs(-1972.1121)); // abs 함수는 넣은 값의 절대값을 구한다
+        
+        console.log(Math.ceil(1972.1121)); // ceil 함수는 넣은 값의 올림값을 구한다
+        console.log(Math.floor(1972.1121)); // floor 함수는 넣은 값의 버림값을 구한다
+
+        console.log(Math.min(1, 9, 7, 2, 1, 1, 2, 1)); // min 함수는 넣은 수 중 가장 작은 수를 구한다
+        console.log(Math.max(1, 9, 7, 2, 1, 1, 2, 1)); // max 함수는 넣은 수 중 가장 큰 수를 구한다
+        
+        console.log(Math.random()); // 랜덤함수는 랜덤한 값을 출력한다
+        console.log(Math.round(Math.random() * 100)); // 다음 코드를 통해 1부터 100까지의 숫자를 뽑을 수 있다
+    </script>
 </div>
 <br><br>
+
+<div class = "square">
+    <h2>김상현의 트리플 악셀 사진을 바꾸어보자</h2>
+    <p>위가 원본, 아래가 수정본</p>
+    <img id="Image" src="트리플악셀.gif">
+    <hr>
+    <img id = "ImageCSS" src = "트리플악셀.gif">
+    <hr>
+    <script>
+        document.getElementById("ImageCSS").style.width = "75%";
+    </script>
+    
+    <img id = "ButtonEvent" src = "트리플악셀.gif" style = "width: 50%;">
+    <br>
+    <button onclick="ButtonEvention()">틀 만들기</button>
+
+    <script>
+        function ButtonEvention(){
+            document.getElementById('ButtonEvent').style.border.color = "yellow";
+            document.getElementById('ButtonEvent').style.border.style = "solid";
+            document.getElementById('ButtonEvent').style.border.width = "10px";
+        }
+    </script>
+    <!--안되는지 확인중-->
+    <br><br>
+</div>
+<br><br>
+
+<div class = "square">
+    <h2>이번에는 한번 사각형이 움직이는 애니메이션을 만들어보겠습니다</h2>
+    
+    <hr>
+    <div id = "container">
+        <div id = "animate"></div>
+    </div>
+    <button onclick="move()">움직이기</button>
+    <br><br>
+    <script>
+        function move(){
+            var elem = document.getElementById("animate");
+            var pos = 0;
+            var id = setInterval(frame, 5);
+            function frame(){
+                if(pos == 350){
+                    clearInterval(id);
+                }else{
+                    pos++;
+                    elem.style.top = pos + "px";
+                    elem.style.left = pos + "px";
+                }
+            }
+        }    
+    </script>
+</div>
+
+<br><br>
+
+<div class = "square">
+    <h2 onclick = "this.innerHTML = 'OOF!'">이번에는 한번 Event를 만들어보겠습니다</h2>
+    <p onclick = "changeText(this)">이것도 만져보시지(?)</p>
+    <p onclick = "this.innerHTML = Date()">지금 시간은?</p>
+    <script>
+        function changeText(id){
+            id.innerHTML = "이것은 함수를 이용함, f12 확인";
+        }
+    </script>
+</div>
+
+<br><br>
+
+<div class = "square">
+    <h2>쿠기를 설정해보자</h2>
+    <p id = "cookie">오류</p>
+    <script>
+        var text = "";
+        if (navigator.cookieEnabled == true) {
+            text = "지금 이거 방문하거, 쿠키에 저장했다 쿠쿠루삥뽕";
+        } else {
+            text = "쳇 실패군.";
+        }
+        document.getElementById("cookie").innerHTML = text;
+    </script>
+</div>
 </body></html>
