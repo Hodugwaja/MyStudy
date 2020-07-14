@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style type="text/css">
+        .square{
+            border : 5px solid gray;
+            text-align: center;
+        }
+        .squareIn{
+            border : 5px solid gray;
+            text-align: center;
+            margin : 20px;
+        }
+        .light #selected{
+            color:red;
+        }
+        .dark {
+            background-color:black;
+            color:white;
+        }
+        .dark #selected{
+            color:yellow;
+        }
+
+        .light{
+            background-color: white;
+            color : black;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>생활코딩으로 만들어보는 React</h1>
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li id="selected">JavaScript</li>
+    </ul>
+    <input type="button" onclick="document.body.className='dark'" value="dark" />
+    <input type="button" onclick="document.body.className='light'" value = "bright" />
+    <br><br>
+    <div class = "square">
+        <h2>1. 세상에는 정말 다양하게 javascirpt 파일을 사용하는 법이 있다</h2>
+        <!--1. inline. 정보와 제어가 섞여 있기 때문에 정보로서 가치가 떨어진다-->
+        <input type = "button" onclick="alert('태그에 연관된 스크립트가 분명하게 나타나지만 정보와 제어가 같이 쓰기 때문에 정보로서의 가치가 떨어진다')" value = "1. inline"/>
+
+        <input type = "button" id = "ScriptTag" value = "2. script 태그">
+        <script type = "text/javascript">
+            var Tag = document.getElementById('ScriptTag');
+            Tag.addEventListener('click', function(){
+                alert('html 태그와 js 코드를 분리할 수 있다');
+            });
+        </script>
+        <input type = "button" id = "outside" value = "3. 외부 파일로 분리" />
+        <script type = "text/javascript" src = "script2.js"></script>
+        <br><br>
+    </div>
+
+    <br><br>
+    
+    <div class = "square">
+        <h2>2. 객체화 </h2>
+        <p>웹 브러우저의 구성요소는 하나 같이 객체화가 되어있다.</p>
+        <p>이중 BOM과 DOM은 이 구조를 구성하고 있는 가장 큰 틀의 분류라고 할 수 있다</p>
+        <div class = "squareIn">
+            <h2>1. core</h2>
+            <p>JavaScript 언어 자체에 정의 되어 있는 객체들</p>
+            <a href = "https://opentutorials.org/course/50">이거 보면 됨</a>
+            <br><br>
+        </div>
+        <div class = "squareIn">
+            <h2>2. BOM</h2>
+            <p>웹 페이지의 내용을 제외한 브라우저의 각종 요소들을 객체화시킨 것이다</p>
+            <p>자세한 것은 두번째 버튼을 클릭하면 된다</p>
+            <input type = "button" onclick = "alert(window.location)" value = "alert(window location)" />
+            <input type = "button" onclick = "window.open('BOM/BOM.HTML')" value = "window.open('bom.html')" />
+            <br><br>
+        </div>
+        <div class = "squareIn">
+            <h2>3. DOM</h2>
+            <p>웹 페이지의 내용을 제어 winodw의 프로퍼티인 document 프로피터에 할당한 document 객체가 이러한 작업을 담당함</p>
+            <img src="https://s3.ap-northeast-2.amazonaws.com/opentutorials-user-file/course/94.png" />
+            <img src="https://s3.ap-northeast-2.amazonaws.com/opentutorials-user-file/course/94.png" />
+            <img src="https://s3.ap-northeast-2.amazonaws.com/opentutorials-user-file/course/94.png" />
+            <img src="https://s3.ap-northeast-2.amazonaws.com/opentutorials-user-file/course/94.png" />
+            <script type="text/javascript">
+                // body 객체
+                console.log(document.body);
+                // 이미지 객체들의 리스트
+                console.log(document.images);
+
+                //또한 특정한 엘리먼트의 객체를 획득할 수 있는 메소드도 제공
+                // body 객체
+                console.log(document.getElementsByTagName('body')[0]);
+                // 이미지 객체들의 리스트
+                console.log(document.getElementsByTagName('body'));
+
+            </script>
+        </div>
+    </div>
+</body>
+</html>

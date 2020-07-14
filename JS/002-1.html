@@ -379,7 +379,7 @@
     <h4>되돌리기는 reverse함수를 이용하면 됨</h4>
     <p id = "SortAndReverse">오류</p>
     <button onclick="Sorting()">오름차순으로 정렬</button>
-    <button onclick="Reversing()">원래대로 바꾸기</button>
+    <button onclick="Reversing()">내림차순으로 정렬</button>
     <script>
         var Pitches = ["요키시", "브리검", "최원태", "이승호", "한현희", "김태훈", "안우진", "조상우"];
         document.getElementById("SortAndReverse").innerHTML = Pitches;
@@ -619,15 +619,18 @@
     <div id = "container">
         <div id = "animate"></div>
     </div>
-    <button onclick="move()">움직이기</button>
+    <button onclick="Move()">움직이기</button>
+    <button onclick="RewindMove()">돌아가기</button>
     <br><br>
     <script>
-        function move(){
-            var elem = document.getElementById("animate");
-            var pos = 0;
-            var id = setInterval(frame, 5);
+
+        var elem = document.getElementById("animate");
+        var pos = 0;
+        function Move(){
+            pos = 0;
+            var id = setInterval(frame, 5);    
             function frame(){
-                if(pos == 350){
+                if(pos >= 350){
                     clearInterval(id);
                 }else{
                     pos++;
@@ -636,6 +639,19 @@
                 }
             }
         }    
+
+        function RewindMove(){
+            var id = setInterval(frame, 5);
+            function frame(){
+                if(pos <= 0){
+                    clearInterval(id);
+                }else{
+                    pos--;
+                    elem.style.top = pos - "px";
+                    elem.style.left = pos - "px";
+                }
+            }
+        }
     </script>
 </div>
 
@@ -666,5 +682,43 @@
         }
         document.getElementById("cookie").innerHTML = text;
     </script>
+</div>
+
+<br><br>
+
+<div class = "square">
+    <h2>이번에는 한번 사각형에 마우스를 올리면 인식하게 만들어보겠습니다</h2>
+    <div onmouseover="mOver(this)" onmouseout="mOut(this)" style = "background-color: #D94A38; height :20px; padding:  40px; text-align: center;">
+        올려보시요
+    </div>
+    <div onmousedown="mDown(this)" onmouseup="mUp(this)"style="background-color:#FFFF00;height:20px;padding:40px;">눌러보시요</div>
+    <script>
+        function mOver(obj){
+            obj.innerHTML = "확인되었습니다";
+        }
+        
+        function mOut(obj){
+            obj.innerHTML = "마우스를 위에 올려주시요";
+        }
+
+        function mDown(obj){
+            obj.style.backgroundColor = "#1ec5e5";
+            obj.innerHTML = "살려주세요";
+        }
+
+        function mUp(obj){
+            obj.style.backgroundColor = "#FFFF00";
+            obj.innerHTML = "ㄱㅅ";
+        }
+    </script>
+</div>
+<br><br>
+
+<div class = "square">
+    <h2>addEventListner()</h2>
+    <h5>이벤트를 등록하는 가장 건전한 방식</h5>
+    <p id = "First"></p>
+
+    <script></script>
 </div>
 </body></html>

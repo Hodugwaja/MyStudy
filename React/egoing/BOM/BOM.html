@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style type="text/css">
+        .square{
+            border : 5px solid gray;
+            text-align: center;
+        }
+        .squareIn{
+            border : 5px solid gray;
+            text-align: center;
+            margin : 5%;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>BOM</h1>
+    <h4>BOM에 대해서 알아보자</h4>
+    <div class = "square">
+        <h2>1. BOM</h2>
+        <p>웹 브라우저의 창이나 프래임을 추상화 해서 프로그래밍적으로 제어할 수 있도록 하는 수단</p>
+        <p>여기에서는 Window 객체의 사용법에 대해서 알아봄(Window 객체의 프로퍼티와 메소드를 사용법 === BOM)</p>
+    </div>
+
+    <br><br>
+
+    <div class = "square">
+        <h2>2. Window 객체</h2>
+        <div class = "squareIn">
+            <h2>전역 객체</h2>
+            <p>window 객체는 식별자 window를 통해서 얻을 수 있고 생략도 가능하다</p>
+            <script>
+                /* 편의상 주석처리
+                alert('일반 형태');
+                alert('전역 객체 호출');
+                window.alert('전역 객체 호출');
+            
+                var a = 1;
+                alert('전역 변수 a에 접근을 통해서 만들기');
+                alert(a);
+                alert(window.a);
+
+                alert('객체를 만드는 것은 window 객체의 프로퍼티와 만드는 것이 같다');
+                var b = {id:1};
+                alert(b.id);
+                alert(window.b.id);*/
+            </script>
+        </div>
+        <div class = "squareIn">
+            <h2>사용자와의 커뮤니케이션</h2>
+            <p>HTML은 form을 통해서 사용자와 커뮤니케이션을 할 수 있는 기능을 제공</p>
+            <p>자바스크립트는 사용자와 정보를 주고 받을 수 있는 간편한 수단으로 제공</p>
+            <div class = "squareIn"> 
+                <h2>alert 함수</h2>
+                <p>밑의 버튼을 눌러 alert 함수에 대해서 알아보시요</p>
+                <input type = "button" value = "alert함수" onclick = "alert('경고창이라고 부르기도 하며 사용자에게 정보 제공 또는 디버깅 용도로 사용한다');">
+                <br><br>        
+            </div>
+            <div class = "squareIn">
+                <h2>confrim 함수</h2>
+                <p>밑의 버튼을 눌러 confrim 함수에 대해서 알아보시요</p>
+                <input type = "button" value = "confirm함수" onclick = "func_Ganung()">
+                <script>
+                    function func_Ganung(){
+                        if(confirm('가능?')){
+                            alert('확인을 누르면 true가 나온다');
+                        } else{
+                            alert('취소를 누르면 false가 나온다');
+                        }
+                    }
+                </script>
+                <br><br>
+            </div>
+            <div class = "squareIn">
+                <h2>prompt함수</h2>
+                <p>사용자의 입력을 통해서 입력된 것을 토대로 결과를 유추한다.</p>
+                <p>아래 버튼을 눌러보자</p>
+                <input type = "button" value = "prompt" onclick="func_prompt()" />
+                <script>
+                    function func_prompt(){
+                        if(prompt('id' === 'egoing')){
+                            alert("옳은 값을 입력한다면 1 입력이 된다");
+                        }else{
+                            alert("잘못된 값을 입력한다면 else문으로 간다");
+                        }
+                    }
+                </script>
+                <br><br>
+            </div>
+        </div>
+        <hr>
+        <div class = "squareIn">
+            <h2>Location 객체</h2>
+            <p>Location 객체는 무선의 주소와 관련된 객체로 Window 객체의 프로퍼티이다</p>
+            <p>Window의 문서 URL을 변경 할 수 있고 문서의 위치와 관련해서 다양한 정보를 얻어낼 수 있다</p>
+            <div class = "squareIn">
+                <h2>현재 Window URL을 알아내기</h2>
+                <p>이 Window의 문서가 위치하는 URL을 제공하는 방법(console 참고)</p>
+                <input type = "button" value = "이 파일의 위치 알아내기" onclick="func_Location()">
+                <script>
+                    console.log(location.toString(), location.href);
+                    function func_Location(){
+                        alert(location.toString(), location.href);
+                    }
+                    console.log(location.protocol, location.host, location.port, location.pathname, location.search, location.hash);
+                </script>
+                <br><br>
+            </div>
+            <div class = "squareIn">
+                <h2>이 문서의 위치 바꾸기</h2>
+                <p>이 문서의 위치를 바꿀 수 있다(바로 옮겨지기 때문에 주석처리)</p>
+                <input type = "button" value = "이 파일의 위치 바꾸기" onclick="func_ChLocation()">
+                <br><br>
+                <script>
+                    // location.href = "https://www.dsm-dms.com/";
+                    console.log(location.toString(), location.href);
+                    function func_ChLocation(){
+                        alert("현재 해당 코드는 주석처리를 했습니다")
+                    }
+                    console.log(location.protocol, location.host, location.port, location.pathname, location.search, location.hash);
+                </script>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
