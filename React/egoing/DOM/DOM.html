@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <head>
+        <style type="text/css">
+            .square{
+                border : 5px solid gray;
+                text-align: center;
+            }
+            .squareIn{
+                border : 5px solid gray;
+                text-align: center;
+                margin : 5%;
+            }
+            .light{
+                background-color: white;
+                color : black;
+            }
+            .dark {
+                background-color:black;
+                color:white;
+            }
+        </style>
+    </head>
+</head>
+<body>
+    <h1>DOM</h1>
+    <hr>
+    <div class = "square">
+        <h1 style = "text-align: left; padding-left: 2%;">DOM</h1>
+        <p>Document Object Model로 웹 페이지를 자바스크립트로 제어하기 위한 객체 모델을 말함</p>
+        <p>Window 객체의 document 프로퍼티를 통해서 사용할 수 있다.</p>
+        <p>Window 객체가 창을 의미한다면 Document 객체는 Window에 로드된 문서를 의미함</p>
+        <p><strong>문서를 제어하는 방법에 대한 내용을 다룰 예정</strong></p>
+        <div class = "squareIn">
+            <h2>제어 대상 찾기</h2>
+            <p>문서를 자바스크립트로 제어하려면 제어의 대상에 해당하는 객체를 제일 먼저 찾아야 한다</p>
+            <p>문서 내에 객체를 찾는 방법은 document 객체의 메소드를 이용한다</p>
+            <div class = "squareIn">
+                <a href = "#" style = "color: black; text-decoration: none;">
+                <h2>document.getElementsByTagName</h2>
+                <p>문서 내에서 특정 태그에 해당하는 객체를 차즌 방법은 여러가지가 있다</p>
+                <p>getElementsByTagName은 인자로 전달 된 테그명에 해당하는 객체를 찾아서<br>그 리스트를 NodeList라는 유사배열에 담아서 반환한다</p>
+                <p>NodeList은 배열은 아니지만 length와 배열 접근 연산자를 사용하여 엘리먼트를 조화 할 수 있다</p>
+                <p>아래의 버튼을 눌러서 확인해보자 </p>
+                <input type = "button" onclick="TagName()" value = "적용하기">
+                <input type = "button" onclick="TagNameReturn()" value = "원래대로 바꾸기">
+                <br><br>
+                <script>
+                    function TagName(){
+                        var lis = document.getElementsByTagName('p');
+                        for(var i = 0; i< lis.length; i++){
+                            lis[i].style.color = 'yellow'; 
+                            document.body.className='dark';
+                        }
+                    }
+                    function TagNameReturn(){
+                        var lis = document.getElementsByTagName('p');
+                        for(var i = 0; i< lis.length; i++){
+                            lis[i].style.color = 'black'; 
+                            document.body.className='light';
+                        }
+                    }   
+                </script>
+                <p>조회의 대상을 좁히려면 아래와 같이 특정 객체를 지정할 수 있다</p>
+                <input type = "button" onclick="InsideTagName()" value = "이 부분만 적용하기">
+                <input type = "button" onclick="InsideTagNameReturn()" value = "원래대로 바꾸기">
+                <br><br>
+                <script>
+                    function InsideTagName(){
+                        var ahr = document.getElementsByTagName('a')[0];
+                        var lis = ahr.getElementsByTagName('p');
+                        var others = document.getElementsByTagName('p');
+                        for(var i = 0; i< others.length; i++){
+                            others[i].style.color = 'white';
+                        }
+                        for(var i = 0; i< lis.length; i++){
+                            lis[i].style.color = 'yellow'; 
+                        }
+                        document.body.className='dark';
+                        document.h2.className = 'light';
+                    }
+
+                    function InsideTagNameReturn(){
+                        var ahr = document.getElementsByTagName('a')[0];
+                        var lis = ahr.getElementsByTagName('p');
+                        var others = document.getElementsByTagName('p');
+                        for(var i = 0; i< others.length; i++){
+                            others[i].style.color = 'black';
+                        }
+                        for(var i = 0; i< lis.length; i++){
+                            lis[i].style.color = 'black'; 
+                        }
+                        document.body.className='light';
+                        document.h2.className='dark';
+                    }
+                </script>
+                </a>
+            </div>
+            <hr>
+            <div class = "squareIn">
+                <h2>document.getElementsByClassName</h2>
+                <p class = "activate">클래스 속성 값을 기준으로 객체를 조회할 수 있다</p>
+                <input type = "button" onclick="ClassName()" value = "적용하기">
+                <input type = "button" onclick="ClassNameReturn()" value = "원래대로 바꾸기">
+                <br><br>
+                <script>
+                    function ClassName(){
+                        var lis = document.getElementsByClassName('activate');
+                        for(var i = 0; i<lis.length; i++){
+                            lis[i].style.color = 'blue';
+                        }
+                    }
+                    function ClassNameReturn(){
+                        var lis = document.getElementsByClassName('activate');
+                        for(var i = 0; i<lis.length; i++){
+                            lis[i].style.color = 'black';
+                        }
+                    }
+                </script>
+            </div>
+            <hr>
+            <div class = "squareIn">
+                <h2>document.getElementByld</h2>
+                <p id = "activateID">id 값을 기준으로 객체를 조회한다</p>
+                <p id = "activateID">가장 우수한놈</p>
+                <input type = "button" onclick="ID()" value = "적용하기">
+                <input type = "button" onclick="IDReturn()" value = "원래대로 바꾸기">
+                <br><br>
+                <script>
+                    function ID(){
+                        var lis = document.getElementById('activateID');
+                        for(var i = 0; i<lis.length; i++){
+                            lis[i].style.color = 'blue';
+                        }
+                    }
+                    function IDReturn(){
+                        var lis = document.getElementById('activateID');
+                        for(var i = 0; i<lis.length; i++){
+                            lis[i].style.color = 'black';
+                        }
+                    }
+                </script>
+            </div>
+            <hr>
+            <div class = "squareIn">
+                <h2>document.querySelector</h2>
+                <p class = "ActivateQuery">CSS 선택자의 문법을 이용해서 객체를 조회할 수 있다</p>
+                <script>
+                    var li = document.querySelector('p');
+                    li.style.color='red';
+                    var li = document.querySelector('.ActivateQuery');
+                    li.style.color='blue';
+                </script>
+            </div>
+            <hr>
+            <div class = "squareIn">
+                <h2>document.querySelectorAll</h2>
+                <p><li>querySelector이지만 모든 객체에만 적용된다는 점이 다르다</li></p>
+                <script>
+                    var lis = document.querySelectorAll('li');
+                    for(var name in lis){
+                        lis[name].style.color = 'blue';
+                    }
+                </script>
+            </div>
+        </div>
+        <hr>
+        <div class = "squareIn">
+            <h2>jQuery</h2>
+            <p>DOM을 내부가 감추고 보다 쉽게 웹페이지를 조작할 수 있는 도구이다</p>
+            <div class = "squareIn">
+                <h3>jQuery 로드</h3>
+                <p>HTML을 사용해서 로드를 해야 한다</p>
+                <script src = "//code.jquery.com/jquery-1.11.0.min.js">
+                    jQuery( document ).ready(function( $ ){
+                        $('body').prepend('<h1>규카츠 먹고 싶다</h1>');
+                    });
+                </script>
+                }
+            </div>
+        </div>
+    </div>
+</body>
+</html>
