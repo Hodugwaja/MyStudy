@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>JQuery 실전편</title>
+    <link rel = "stylesheet" href = "JQueryUse.css" type = "text/css">
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+</head>
+<body>
+    <h2>jQuery 실전편</h2>
+    <p>jQuery는 아주 단순하지만 강하다</p>
+    <p>$() 는 jQuery 함수이다</p>
+    <ul id = demo>
+        <li id = "activatedJ">규카츠</li>
+        <li id = "activatedJ">돈가스</li>
+        <li id = "activatedJ">호두과자</li>
+    </ul>
+    <ul id = "execute">
+        <li>
+            <pre>
+                var lis = document.getElementsByTagName('li');
+                for(var i = 0; i&lt; lis.length){
+                    lis[i].style.color = 'red';
+                }
+            </pre>
+    
+            <pre>
+                $('li').css('color', 'red');
+            </pre>
+            <button type = "button" value = "execute" onclick="$('li').css('color', 'red')">execute</button>
+        </li>
+        <li>
+            <pre>
+                var lis = document.getElementsByClassName('active');
+                for(var i=0; i &lt; lis.length; i++){
+                    lis[i].style.color='red';   
+                }
+            </pre>
+            <pre>
+                $('.active').css('color', 'red')</pre>
+                        <input type="button" value="execute" onclick="$('.active').css('color', 'red')" />
+            </li>
+        <li>
+            <pre>
+                var li = document.getElementById('active');
+                li.style.color='red';
+                li.style.textDecoration='underline';
+            </pre>
+            
+            <pre>
+                $('$active').css('color', 'red').css('textDecoration', 'underline');
+            </pre>
+            <input type="button" value="execute" onclick="$('#active').css('color', 'red').css('textDecoration', 'underline')" />
+        </li>
+        <br><br>
+        <input type = "button" value = "원상복귀" onclick="$('li').css('color', 'black')">
+    </ul>
+    
+    
+</body>
+</html>

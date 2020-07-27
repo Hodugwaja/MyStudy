@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
     <head>
+        <title>DOM</title>
+        <link rel = "stylesheet" href = "JQueryUse.css" type = "text/css">
         <style type="text/css">
             .square{
                 border : 5px solid gray;
@@ -20,6 +22,8 @@
                 background-color:black;
                 color:white;
             }
+
+           
         </style>
     </head>
 </head>
@@ -160,7 +164,7 @@
                 <script>
                     var lis = document.querySelectorAll('li');
                     for(var name in lis){
-                        lis[name].style.color = 'blue';
+                        lis.style.color = 'blue';
                     }
                 </script>
             </div>
@@ -169,16 +173,42 @@
         <div class = "squareIn">
             <h2>jQuery</h2>
             <p>DOM을 내부가 감추고 보다 쉽게 웹페이지를 조작할 수 있는 도구이다</p>
+            <!-- <p>p.s : jQuery 사용하는 사람은 다 뒤져야 한다(오준상)</p> -->
             <div class = "squareIn">
                 <h3>jQuery 로드</h3>
                 <p>HTML을 사용해서 로드를 해야 한다</p>
-                <script src = "//code.jquery.com/jquery-1.11.0.min.js">
+                <script src="http://code.jquery.com/jquery-1.11.0.min.js">
                     jQuery( document ).ready(function( $ ){
                         $('body').prepend('<h1>규카츠 먹고 싶다</h1>');
                     });
                 </script>
-                }
             </div>
+        </div>
+        <br>
+        <div class = "squareIn">
+            <h2>jQuery 실전편</h2>
+            <a href = "JQueryUse.html" style = "text-decoration: none;">그냥 여기로</a>
+            <br><br>
+        </div>
+        <hr>
+        <div class = "squareIn">
+            <h2>HTMLElement</h2>
+            <p>getElement~ 메소드를 통해서 객체를 조회했다면 이 객체들을 대상으로 구체적인 작업을 처리해야 할때 적절한 메소드나 프로퍼티를 사용하기 위해서 획득한 객체가 정확이 무엇인지 알아야한다</p>
+            <p>이번 편에서는 console.log를 사용한다</p>
+            <a id="anchor" href="http://opentutorials.org">opentutorials</a>
+            <ul>
+                <li>규카츠</li>
+                <li>돈가스</li>
+                <li id = "Active">호두과자</li>
+            </ul> 
+            <p><input type = "button" id = "button" value = "button"></p>
+            <script src = "HTMLElement.js">     
+            </script>
+            <p>document.getElementByld : 리턴 데이터 타입은 HTMLLIELement -> 단수</p>
+            <p>document.getElementsByTagName : 리턴 데이터 타입은 HTMLCollection -> 복수</p>
+           
+           
+            <p></p>
         </div>
     </div>
 </body>
