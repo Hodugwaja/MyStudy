@@ -203,12 +203,28 @@
             </ul> 
             <p><input type = "button" id = "button" value = "button"></p>
             <script src = "HTMLElement.js">     
-            </script>
+            </script>b
             <p>document.getElementByld : 리턴 데이터 타입은 HTMLLIELement -> 단수</p>
             <p>document.getElementsByTagName : 리턴 데이터 타입은 HTMLCollection -> 복수</p>
-           
-           
-            <p></p>
+            <p><a href ="HTMLElements.html" style = "text-decoration: none;">나머지는 여기로</a></p>
+        </div>
+        <hr>
+        <div class = "squareIn">
+            <h2>HTMLCollection</h2>
+            <script>
+                console.group('before');
+                var lis = document.getElementsByTagName('li');
+                for(var i = 0; i < lis.length; i++){
+                    console.log(lis[i]);
+                }
+                console.groupEnd();
+                console.group('after');
+                lis[1].parentNode.removeChild(lis[1]);
+                for(var i = 0; i < lis.length; i++){
+                    console.log(lis[i]);
+                }
+                console.groupEnd();
+                </script>
         </div>
     </div>
 </body>
