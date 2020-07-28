@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <head>
+        <title>getElementsByTagName</title>
+        <style>
+            .light{
+                background-color: white;
+                color : black;
+            }
+            .dark {
+                background-color:black;
+                color:white;
+            }
+        </style>
+    </head>
+</head>
+<body>
+    
+    <h2>document.getElementsByTagName</h2>
+    <p>문서 내에서 특정 태그에 해당하는 객체를 차즌 방법은 여러가지가 있다</p>
+    <p>getElementsByTagName은 인자로 전달 된 테그명에 해당하는 객체를 찾아서<br>그 리스트를 NodeList라는 유사배열에 담아서 반환한다</p>
+    <p>NodeList은 배열은 아니지만 length와 배열 접근 연산자를 사용하여 엘리먼트를 조화 할 수 있다</p>
+    <p>아래의 버튼을 눌러서 확인해보자 </p>
+    <input type = "button" onclick="TagName()" value = "적용하기">
+    <input type = "button" onclick="TagNameReturn()" value = "원래대로 바꾸기">
+    <br><br>
+    <script>
+        function TagName(){
+            var lis = document.getElementsByTagName('p');
+            for(var i = 0; i< lis.length; i++){
+                lis[i].style.color = 'yellow'; 
+                document.body.className='dark';
+            }
+        }
+        function TagNameReturn(){
+            var lis = document.getElementsByTagName('p');
+            for(var i = 0; i< lis.length; i++){
+                lis[i].style.color = 'black'; 
+                document.body.className='light';
+            }
+        }   
+    </script>
+        <a href = "#" style = "color: black; text-decoration: none;">
+        <P>조회의 대상을 좁히려면 아래와 같이 특정 객체를 지정할 수 있다</P>
+        <input type = "button" onclick="InsideTagName()" value = "이 부분만 적용하기">
+        <input type = "button" onclick="InsideTagNameReturn()" value = "원래대로 바꾸기">
+        <br><br>
+        <script>
+            function InsideTagName(){
+                var ahr = document.getElementsByTagName('a')[0];
+                var lis = ahr.getElementsByTagName('p');
+                var others = document.getElementsByTagName('p');
+                for(var i = 0; i< others.length; i++){
+                    others[i].style.color = 'white';
+                }
+                for(var i = 0; i< lis.length; i++){
+                    lis[i].style.color = 'yellow'; 
+                }
+                document.body.className='dark';
+                document.h2.className = 'light';
+            }
+
+            function InsideTagNameReturn(){
+                var ahr = document.getElementsByTagName('a')[0];
+                var lis = ahr.getElementsByTagName('p');
+                var others = document.getElementsByTagName('p');
+                for(var i = 0; i< others.length; i++){
+                    others[i].style.color = 'black';
+                }
+                for(var i = 0; i< lis.length; i++){
+                    lis[i].style.color = 'black'; 
+                }
+                document.body.className='light';
+                document.h2.className='dark';
+            }
+        </script>
+    </a>
+</body>
+</html>
