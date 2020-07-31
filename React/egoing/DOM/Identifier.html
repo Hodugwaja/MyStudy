@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        /* Style the tab buttons */
+        .tablink {
+        background-color: #555;
+        color: white;
+        float: left;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 14px 16px;
+        font-size: 17px;
+        width: 25%;
+        }
+
+        /* Change background color of buttons on hover */
+        .tablink:hover {
+        background-color: #777;
+        }
+
+        /* Set default styles for tab content */
+        .tabcontent {
+        color: white;
+        display: none;
+        padding: 50px;
+        text-align: center;
+        }
+
+        /* Style each tab content individually */
+        #ClassList {background-color:red;}
+        #ClassName {background-color:green;}
+        #ClassId {background-color:blue;}
+        #ClassTagName {background-color:orange;}
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>식별</title>
+</head>
+<body>
+    <h2>식별자</h2>
+    <p>문서 내에서 특정한 엘리먼트를 식별하기 위한 용도로 사용되는 API</p>
+    <button class = "tablink" onclick = "openChar('ClassTagName', this, 'orange')" id = "defaultOpen">Element.classtagName</button>
+    <button class = "tablink" onclick = "openChar('ClassId', this, 'blue')">Element.classid</button>
+    <button class = "tablink" onclick = "openChar('ClassName', this, 'green')">Element.ClassName</button>
+    <button class = "tablink" onclick = "openChar('ClassList', this, 'red')">Element.classList</button>
+    
+    <div id = "ClassTagName" class = "tabcontent">
+        <h1>Element.tagName</h1>
+        <p>해당 엘리먼트의 태그 이름을 알아낸다</p>
+        <p>단 태그의 이름을 변경하지 못한다</p>
+        <ul>
+            <li>html</li>
+            <li>css</li>
+            <li id="active3">JavaScript</li> 
+        </ul>
+        <script>
+            console.log(document.getElementById('active3'.tagName));
+        </script>
+    </div>
+
+    <div id = "ClassId" class = "tabcontent">
+        <h1>Element.ClassId</h1>
+        <p>각각 태그는 하나의 id만 넣을 수 있기 때문에 단 하나의 태그만 식별할 수 있는거다</p>        
+        <ul>
+            <li>html</li>
+            <li>css</li>
+            <li id="active4">JavaScript</li> 
+        </ul>
+        <script>
+            var active = document.getElementById('active4');
+            console.log(active.id);
+            active.id = 'deactive';
+            console.log(active.id);
+        </script>
+    </div>
+
+    
+    <div id = "ClassList" class = "tabcontent">
+        <h1>Element.ClassList</h1>
+        <p>해당 엘리먼트는 className에 비해 훨씬 편리한 사용성을 제공한다</p>
+        <ul>
+            <li>html</li>
+            <li>css</li>
+            <li id="active1" class="important current">JavaScript</li>
+        </ul>
+        <script>
+        function loop(){
+            for(var i=0; i<active1.classList.length; i++){
+                console.log(i, active1.classList[i]);
+            }
+        }
+        // 클래스를 추가
+        </script>
+        <input type="button" value="DOMTokenList" onclick="console.log(active.classList);" />
+        <input type="button" value="조회" onclick="loop();" />
+        <input type="button" value="추가" onclick="active.classList.add('marked');" />
+        <input type="button" value="제거" onclick="active.classList.remove('important');" />
+        <input type="button" value="토글" onclick="active.classList.toggle('current');" />               
+    </div>
+
+    <div id = "ClassName" class = "tabcontent">
+        <h1>Element.ClassName</h1>
+        <p>여러 개의 엘리먼트를 그룹핑할 때 사용한다</p>
+        <ul>
+            <li>html</li>
+            <li>css</li>
+            <li id="active2">JavaScript</li>
+        </ul>
+        <script>
+            var active = document.getElementById('active2');
+            active2.className = "important current";
+            console.log(active2.className);
+            active2.className += " readead" // 클래스를 추가할 때 아래와 같이 문자열을 더한다
+        </script>      
+    </div>
+
+    <script src = "Identifier.js"></script>
+</body>
+</html>

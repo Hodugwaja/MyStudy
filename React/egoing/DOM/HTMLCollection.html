@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTMLCollection</title>
+</head>
+<body>
+    <h2>HTMLCollection</h2>
+    <strong>*주의 : 이 페이지에 나오는 버튼, 사진은 아무런 연관이 없으며 console부분을 참조하기 바람*</strong>
+    <p>HTMLCollection은 리턴 결과가 복수인 경우에 사용하게 되는 객체다. </p>
+    <p>유사배열로 배열과 비슷한 사용방법을 가지고 있지만 배열은 아니다. </p>    
+    <li>규카츠</li>
+    <li>돈가스</li>
+    <li id = "ActiveCollection">호두과자</li>
+    <script>
+        console.group('before');
+        var lis = document.getElementsByTagName('li');
+        for(var i = 0; i < lis.length; i++){
+            console.log(lis[i]);
+        }
+        console.groupEnd();
+        console.group('after');
+        lis[1].parentNode.removeChild(lis[1]);
+        for(var i = 0; i < lis.length; i++){
+            console.log(lis[i]);
+        }
+        console.groupEnd();   
+    </script> 
+</body>
+</html>

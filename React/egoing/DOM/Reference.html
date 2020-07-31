@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        /* Style the tab buttons */
+        .tablink {
+        background-color: #555;
+        color: white;
+        float: left;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 14px 16px;
+        font-size: 17px;
+        width: 25%;
+        }
+
+        /* Change background color of buttons on hover */
+        .tablink:hover {
+        background-color: #777;
+        }
+
+        /* Set default styles for tab content */
+        .tabcontent {
+        color: white;
+        display: none;
+        padding: 50px;
+        text-align: center;
+        }
+
+        /* Style each tab content individually */
+        #ClassList {background-color:red;}
+        #ClassName {background-color:green;}
+        #ClassId {background-color:blue;}
+        #ClassTagName {background-color:orange;}
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>식별</title>
+</head>
+<body>
+    <h2>식별자</h2>
+    <p>문서 내에서 특정한 엘리먼트를 식별하기 위한 용도로 사용되는 API</p>
+    <button class = "tablink" onclick = "openChar('ClassList', this, 'red')" id = "defaultOpen">Element.classList</button>
+    <button class = "tablink" onclick = "openChar('ClassName', this, 'green')">Element.ClassName</button>
+    <button class = "tablink" onclick = "openChar('ClassId', this, 'blue')">Element.classid</button>
+    <button class = "tablink" onclick = "openChar('ClassTagName', this, 'orange')">Element.classtagName</button>
+    
+    <div id = "ClassList" class = "tabcontent">
+        <h1>Element.ClassList</h1>
+        <p>해당 엘리먼트는 className에 비해 훨씬 편리한 사용성을 제공한다</p>
+        <ul>
+            <li>html</li>
+            <li>css</li>
+            <li id="active" class="important current">JavaScript</li>
+        </ul>
+        <script>
+        function loop(){
+            for(var i=0; i<active.classList.length; i++){
+                console.log(i, active.classList[i]);
+            }
+        }
+        // 클래스를 추가
+        </script>
+        <input type="button" value="DOMTokenList" onclick="console.log(active.classList);" />
+        <input type="button" value="조회" onclick="loop();" />
+        <input type="button" value="추가" onclick="active.classList.add('marked');" />
+        <input type="button" value="제거" onclick="active.classList.remove('important');" />
+        <input type="button" value="토글" onclick="active.classList.toggle('current');" />               
+    </div>
+
+    <div id = "ClassName" class = "tabcontent">
+        <h1>Element.ClassName</h1>
+        <p></p>        
+    </div>
+
+    <div id = "ClassId" class = "tabcontent">
+        <h1>Element.ClassId</h1>
+        <p></p>        
+    </div>
+
+    <div id = "ClassTagName" class = "tabcontent">
+        <h1>Element.tagName</h1>
+        <p></p>        
+    </div>
+    <script src = "Identifier.js"></script>
+</body>
+</html>
