@@ -1,2 +1,6 @@
-alert("I'm Working and I want to eat WalnutCake");
-console.log("I'm Working and I want to eat WalnutCake");
+const a = 221;
+let b = a - 5; 
+console.log(b);
+
+// let : changeable(variable)
+// const : cannot change(constant)
