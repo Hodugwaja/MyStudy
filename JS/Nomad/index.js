@@ -1,6 +1,14 @@
-const a = 221;
-let b = a - 5; 
-console.log(b);
+/*
+// String
+const What = "HoduGwaja"; // "" inside that quotes means String
+*/
 
-// let : changeable(variable)
-// const : cannot change(constant)
+/*
+// booolean
+const what = true; // "true and false"
+*/
+
+/*Numbers
+    const what = 19721121; // just number
+*/
+
