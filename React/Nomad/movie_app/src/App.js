@@ -1,6 +1,8 @@
 import React from "react";
-import Potato from "./Potato";
 
+function Potato(){
+  return <h1>I like Potatos</h1>
+}
 function App() {
   return (
     <div>
