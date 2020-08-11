@@ -1,21 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href = "src/style.css">
     <title>Test</title>
 </head>
 <body>
     <div class="js-clock">
-        <h1>What Time is it?</h1>
-        <h2>00:00</h2>
+        <h1>00:00</h1>
     </div>
+    
     <form class = "js-form form">
         <input type = "text" placeholder="What's your name" />
     </form>
     <h4 class = "js-greetings greetings"></h4>
+    
+    <form class = "js-toDoForm">
+        <input type = "text" placehold = "지금 할거"/>
+    </form>
+    <ul class = "js-toDoList">
+    </ul>
+
     <script src = src/clock.js></script>
     <script src = "src/greeting.js"></script>
+    <script src = "src/todo.js"></script>
 </body>
 </html>

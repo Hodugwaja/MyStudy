@@ -1,5 +1,5 @@
 const clockC = document.querySelector(".js-clock");
-const clock = clockC.querySelector("h2");
+const clock = clockC.querySelector("h1");
 // You're gonna need this
 const NINE_HOURS_MILLISECONDS = 32400000;
 
